@@ -1,0 +1,19 @@
+-- // Module Script \\ --
+-- Module Has Made By REDzHUB --
+-- You Can Use Too! --
+-- REDzHUB GitHub: https://github.com/REDzHUB
+-- REDzHUB Blox Fruits Script Module:
+-- Raw Format:https://raw.githubusercontent.com/REDzHUB/BloxFruits/main/Functions.Lua
+-- Page Format: https://github.com/REDzHUB/BloxFruits/blob/main/Functions.Lua
+-------------
+-- // Module Require \\ --
+local Mod = require(script.ModuleScript)
+-------------
+
+local NoobLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Noob-With-Z/NoobLib/main/source"))()
+local Window = NoobLib:MakeWindow("NZ | Blocos e Frutas", "Made By NoobZ", Enum.KeyCode.H, {ShowPing = true, ShowKeybind = true, ShowFPS = true})
+
+local Set = Window:MakeTab("Settings", 123456789)
+Set:Toggle("Auto Haki", false, function(AutoHaki)
+	Mod.ActiveHaki()
+end)
