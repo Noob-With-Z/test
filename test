@@ -18,14 +18,19 @@ local HRP = plrchar:WaitForChild("HumanoidRootPart")
 local Remotes = ReplicatedStorage:WaitForChild("Remotes")
 local CommF_ = Remotes:WaitForChild("CommF_")
 
-function AutoBuso(bool)
-	while wait() and bool do
+function AutoBuso()
 	if not plrchar:FindFirstChild("HasBuso") then
 		CommF_:InvokeServer("Buso")
 		end
 	end
 end
 
-Set:Toggle("Auto Haki", false, function(AutoHaki)
-	AutoBuso(AutoHaki)
+Set:Toggle("Auto Haki", false, function(AutoHakiAc)
+	_G.AutoTurnOnBuso = AutoHakiAc
+end)
+
+spawn(function()
+while wait() and _G.AutoTurnOnBuso do
+AutoBuso()
+end
 end)
