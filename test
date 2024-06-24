@@ -21,7 +21,6 @@ local CommF_ = Remotes:WaitForChild("CommF_")
 function AutoBuso()
 	if not plrchar:FindFirstChild("HasBuso") then
 		CommF_:InvokeServer("Buso")
-		end
 	end
 end
 
@@ -30,7 +29,7 @@ Set:Toggle("Auto Haki", false, function(AutoHakiAc)
 end)
 
 spawn(function()
-while wait() and _G.AutoTurnOnBuso do
-AutoBuso()
-end
+	while wait() and _G.AutoTurnOnBuso do
+		AutoBuso()
+	end
 end)
