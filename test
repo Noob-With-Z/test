@@ -1,35 +1,7 @@
-local NoobLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Noob-With-Z/NoobLib/main/source"))()
-local Window = NoobLib:MakeWindow("NZ | Blocos e Frutas", "Made By NoobZ", Enum.KeyCode.H, {ShowPing = true, ShowKeybind = true, ShowFPS = true})
-
-local Set = Window:MakeTab("Settings", 123456789)
-
-local ReplicatedStorage = game:GetService("ReplicatedStorage")
-local TeleportService = game:GetService("TeleportService")
-local HttpService = game:GetService("HttpService")
-local VirtualUser = game:GetService("VirtualUser")
-local LogService = game:GetService("LogService")
-local RunService = game:GetService("RunService")
-local Players = game:GetService("Players")
-local plr = Players.LocalPlayer
-local plrchar = plr.Character
-local Humanoid = plrchar:WaitForChild("Humanoid")
-local HRP = plrchar:WaitForChild("HumanoidRootPart")
-
-local Remotes = ReplicatedStorage:WaitForChild("Remotes")
-local CommF_ = Remotes:WaitForChild("CommF_")
-
-function AutoBuso()
-	if not plrchar:FindFirstChild("HasBuso") then
-		CommF_:InvokeServer("Buso")
-	end
-end
-
-Set:Toggle("Auto Haki", false, function(AutoHakiAc)
-	_G.AutoTurnOnBuso = AutoHakiAc
-end)
-
-spawn(function()
-	while wait() and _G.AutoTurnOnBuso do
-		AutoBuso()
-	end
-end)
+-- idk
+game:GetService("StarterGui"):SetCore("SendNotification",{
+	Title = "Tip",
+	Text = "Don't be a skiddo, is it funny stupid guys can't script without copy another scripts and modify and post like is him the script owner XD",
+	Icon = "rbxassetid://1234567890",
+	Button1 = "Ok"
+})
