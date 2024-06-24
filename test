@@ -1,10 +1,3 @@
--- Module Scripts:
-
-local module_scripts = {}
-
-do -- nil.ModuleScript
-	local mscript = Instance.new('ModuleScript', game.ReplicatedStorage)
-	mscript.Name = "ModuleScript NoobZ Hub Domain(Don't Exclude Please)"
 	local function module_script()
 		local ReplicatedStorage = game:GetService("ReplicatedStorage")
 		local TeleportService = game:GetService("TeleportService")
@@ -692,37 +685,12 @@ do -- nil.ModuleScript
 
 		return Module
 	end
-	module_scripts[script] = module_script
-end
 
+local mod = module_script()
+local NoobLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Noob-With-Z/NoobLib/main/source"))()
+local Window = NoobLib:MakeWindow("NZ | Blocos e Frutas", "Made By NoobZ", Enum.KeyCode.H, {ShowPing = true, ShowKeybind = true, ShowFPS = true})
 
-	local script = Instance.new('LocalScript', game.Players.LocalPlayer.PlayerGui)
-	local req = require
-	local require = function(obj)
-		local fake = module_scripts[obj]
-		if fake then
-			return fake()
-		end
-		return req(obj)
-	end
-
-
-	-- // Module Script \\ --
-	-- Module Has Made By REDzHUB --
-	-- You Can Use Too! --
-	-- REDzHUB GitHub: https://github.com/REDzHUB
-	-- REDzHUB Blox Fruits Script Module:
-	-- Raw Format:https://raw.githubusercontent.com/REDzHUB/BloxFruits/main/Functions.Lua
-	-- Page Format: https://github.com/REDzHUB/BloxFruits/blob/main/Functions.Lua
-	-------------
-	-- // Module Require \\ --
-	local Mod = require(game.ReplicatedStorage:WaitForChild("ModuleScript NoobZ Hub Domain(Don't Exclude Please)"))
-	-------------
-
-	local NoobLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Noob-With-Z/NoobLib/main/source"))()
-	local Window = NoobLib:MakeWindow("NZ | Blocos e Frutas", "Made By NoobZ", Enum.KeyCode.H, {ShowPing = true, ShowKeybind = true, ShowFPS = true})
-
-	local Set = Window:MakeTab("Settings", 123456789)
-	Set:Toggle("Auto Haki", false, function(AutoHaki)
-		Mod.ActiveHaki()
-	end)
+local Set = Window:MakeTab("Settings", 123456789)
+Set:Toggle("Auto Haki", false, function(AutoHaki)
+	mod.ActiveHaki()
+end)
