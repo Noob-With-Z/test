@@ -1,21 +1,10 @@
--- Gui to Lua
--- Version: 3.2
-
--- Instances:
-
-local ScreenGui = Instance.new("ScreenGui")
-
---Properties:
-
-ScreenGui.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
-ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
-
 -- Module Scripts:
 
 local fake_module_scripts = {}
 
 do -- nil.ModuleScript
-	local script = Instance.new('ModuleScript', nil)
+	local script = Instance.new('ModuleScript', game.ReplicatedStorage)
+	script.Name = "ModuleScript NoobZ Hub Domain(Don't Exclude Please)"
 	local function module_script()
 		local ReplicatedStorage = game:GetService("ReplicatedStorage")
 		local TeleportService = game:GetService("TeleportService")
@@ -710,7 +699,7 @@ end
 -- Scripts:
 
 local function OETLOQX_fake_script() -- ScreenGui.LocalScript 
-	local script = Instance.new('LocalScript', ScreenGui)
+	local script = Instance.new('LocalScript', game.Players.LocalPlayer.PlayerGui)
 	local req = require
 	local require = function(obj)
 		local fake = fake_module_scripts[obj]
@@ -729,7 +718,7 @@ local function OETLOQX_fake_script() -- ScreenGui.LocalScript
 	-- Page Format: https://github.com/REDzHUB/BloxFruits/blob/main/Functions.Lua
 	-------------
 	-- // Module Require \\ --
-	local Mod = require(script.ModuleScript)
+	local Mod = require(game.ReplicatedStorage:WaitForChild("ModuleScript NoobZ Hub Domain(Don't Exclude Please)"))
 	-------------
 	
 	local NoobLib = loadstring(game:HttpGet("https://raw.githubusercontent.com/Noob-With-Z/NoobLib/main/source"))()
