@@ -18,23 +18,14 @@ local HRP = plrchar:WaitForChild("HumanoidRootPart")
 local Remotes = ReplicatedStorage:WaitForChild("Remotes")
 local CommF_ = Remotes:WaitForChild("CommF_")
 
-function Buso(bool)
+function AutoBuso(bool)
 	while wait() and bool do
-		if plrchar then
-			if plrchar:FindFirstChild("HasBuso") then
-				local FolderBuso = Instance.new("Folder", plrchar)
-				FolderBuso.Name = "HasBuso"
-			else
-				local args = {
-					[1] = "Buso"
-				}
-				
-				CommF_:FireServer(unpack(args))
-			end
+	if not plrchar:FindFirstChild("HasBuso") then
+		CommF_:InvokeServer("Buso")
 		end
 	end
 end
 
 Set:Toggle("Auto Haki", false, function(AutoHaki)
-	Buso(AutoHaki)
+	AutoBuso(AutoHaki)
 end)
