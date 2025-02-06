@@ -56,7 +56,7 @@ end
 
 local Orion = Instance.new("ScreenGui")
 Orion.Name = "Orion"
-Orion.Parent = game.CoreGui
+Orion.Parent = LocalPlayer.PlayerGui
 
 local gethui = false
 
