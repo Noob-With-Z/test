@@ -3,8 +3,7 @@ local Window = Vape:Window("Teste :)", Color3.fromRGB(100, 0, 255), Enum.KeyCode
 
 local Main = Window:Tab("Main")
 
-Main:Slider("Tamanho das pessoas", 1, 50, 1, function(value)
-	
+Main:Textbox("Tamanho dos nego", true, function(value)
 	for i, v in pairs(game:GetService("Players"):GetPlayers()) do
 		if v ~= game:GetService("Players").LocalPlayer then
 			if v.Character then
@@ -12,5 +11,4 @@ Main:Slider("Tamanho das pessoas", 1, 50, 1, function(value)
 			end
 		end
 	end
-	
 end)
