@@ -1,0 +1,16 @@
+local Vape = loadstring(game:HttpGet("https://raw.githubusercontent.com/Noob-With-Z/Libraries/refs/heads/main/Vape.lua"))()
+local Window = Vape:Window("Teste :)", Color3.fromRGB(100, 0, 255), Enum.KeyCode.H)
+
+local Main = Window:Tab("Main")
+
+Main:Slider("Tamanho das pessoas", 1, 50, 1, function(value)
+	
+	for i, v in pairs(game:GetService("Players"):GetPlayers()) do
+		if v ~= game:GetService("Players").LocalPlayer then
+			if v.Character then
+				v.Character.Scale = value
+			end
+		end
+	end
+	
+end)
